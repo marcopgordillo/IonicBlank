@@ -7,9 +7,4 @@ import {Component} from '@angular/core';
 })
 export class HomePage {
 
-    text = 'Default starting text';
-
-    onChangeText() {
-        this.text = 'Changed!';
-    }
 }
