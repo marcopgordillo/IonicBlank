@@ -17,20 +17,36 @@
           <ion-card-content>
             <ion-item>
               <ion-label position="floating">Expense Reason</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" [(ngModel)]="reasonInput"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="floating">Expense Amount</ion-label>
-              <ion-input type="number"></ion-input>
+              <ion-input type="number" [(ngModel)]="amountInput"></ion-input>
             </ion-item>
-            <ion-button fill="outline" color="danger">
-              <ion-icon slot="start" name="close"></ion-icon>Clear
-            </ion-button>
-            <ion-button>
-              <ion-icon slot="start" name="add"></ion-icon>Add Expense
-            </ion-button>
+            <div margin-vertical text-right>
+              <ion-button fill="outline" color="danger" (click)="clear()">
+                <ion-icon slot="start" name="close"></ion-icon>Clear
+              </ion-button>
+              <ion-button (click)="onConfirmBtn()">
+                <ion-icon slot="start" name="add"></ion-icon>Add Expense
+              </ion-button>
+            </div>
           </ion-card-content>
         </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-list>
+          <ion-item *ngFor="let expense of expensesList">
+            {{ expense.reason }}: {{ expense.amount | currency }}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <p margin>Total Expenses: {{ totalExpenses | currency }}</p>
       </ion-col>
     </ion-row>
   </ion-grid>
