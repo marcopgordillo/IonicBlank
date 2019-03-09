@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {AlertController} from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -12,9 +13,13 @@ export class HomePage {
     expensesList: {reason: string, amount: number}[] = [];
     totalExpenses = 0;
 
+    constructor(public alertController: AlertController) {}
+
     onConfirmBtn() {
         // console.log('It works!');
         if (this.reasonInput.trim().length <= 0 || this.amountInput <= 0) {
+            // alert('Invalid values!');
+            this.presentAlert();
             return;
         }
         // console.log(this.reasonInput, this.amountInput);
@@ -29,4 +34,16 @@ export class HomePage {
         this.reasonInput = '';
         this.amountInput = null;
     }
+
+    async presentAlert() {
+        const alert = await this.alertController.create({
+            header: 'Invalid inputs',
+            // subHeader: 'Subtitle',
+            message: 'Please enter a valid reason and amount.',
+            buttons: ['OK']
+        });
+
+        await alert.present();
+    }
+
 }

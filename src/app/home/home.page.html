@@ -5,7 +5,6 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <ion-grid>
     <ion-row>
@@ -39,14 +38,14 @@
       <ion-col size-md="6" offset-md="3">
         <ion-list>
           <ion-item *ngFor="let expense of expensesList">
-            {{ expense.reason }}: {{ expense.amount | currency }}
+            <strong>{{ expense.reason }}:</strong>&nbsp;{{ expense.amount | currency }}
           </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size-md="6" offset-md="3">
-        <p margin>Total Expenses: {{ totalExpenses | currency }}</p>
+        <p margin><strong>Total Expenses:</strong>&nbsp;{{ totalExpenses | currency }}</p>
       </ion-col>
     </ion-row>
   </ion-grid>
