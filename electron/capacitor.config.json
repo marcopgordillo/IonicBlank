@@ -1,0 +1,6 @@
+{
+  "appId": "com.tuxnet.ionicangular",
+  "appName": "IonicBlank",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}
