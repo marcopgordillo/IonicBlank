@@ -2,5 +2,6 @@
   "appId": "com.tuxnet.ionicangular",
   "appName": "IonicBlank",
   "bundledWebRuntime": false,
-  "webDir": "www"
+  "webDir": "www",
+  "linuxAndroidStudioPath": "/home/mgordillo/Downloads/android-studio-ide-182.5314842-linux/android-studio/bin/studio.sh"
 }
